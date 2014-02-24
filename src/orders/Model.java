@@ -21,8 +21,11 @@ import java.sql.Statement;
  */
 public class Model 
 {
+    private static String USER_NAME = "root";
+    private static String PASSWORD = "root";
 	private OrderListModel currentOrderModel;
 	private PreparingOrderModel preparingOrderModel;
+
 	
 	public Model()
 	{
@@ -43,7 +46,7 @@ public class Model
 
         //hp lap connection object
         //Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeteria", "root", "root");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeteria", USER_NAME, PASSWORD);
 	 	Statement stm = null;
 	    String query = "SELECT * FROM categories";
 	
@@ -68,7 +71,7 @@ public class Model
 
         //hp lap connection object
         //Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeteria", "root", "root");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeteria", USER_NAME, PASSWORD);
 	 	Statement stm = null;
 	    String query = "SELECT * FROM products WHERE category_id=" + value;
 	
@@ -94,7 +97,7 @@ public class Model
 		    {
                 //hp lap connection object
                 //Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeteria", "root", "root");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeteria", USER_NAME, PASSWORD);
 		    	
 		        stmt = con.createStatement();
 		        //pstmt = con.prepareStatement("INSERT INTO orders VALUES(NULL, CURDATE(), CURTIME(), '0')", stmt.RETURN_GENERATED_KEYS);
