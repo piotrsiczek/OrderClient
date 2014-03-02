@@ -10,4 +10,3 @@ OrderClient is a client side module. It's main purpose is to mange the orders. U
 OrderServer is a server side module. It's main purpose is to listen to upcomming tasks and display them. It allows to set already prepared tasks. It communicates over the network with OrderClient.
 
 cafeteria.sql is an SQL script to import a mysql database.
-
